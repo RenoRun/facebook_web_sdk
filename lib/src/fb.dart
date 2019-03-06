@@ -56,7 +56,7 @@ void init(base.FbInitOption option) => base.init(option);
 ///
 /// https://developers.facebook.com/docs/reference/javascript/FB.login/v3.1
 Future<LoginStatusResponse> login([List<String> scopes]) {
-  scopes ??= ['public_profile'];
+  scopes ??= ['email'];
   final completer = new Completer<LoginStatusResponse>();
   base.login(allowInterop<GetLoginStatusFunction>((response) {
     completer.complete(new LoginStatusResponse.fromJsObject(response));
